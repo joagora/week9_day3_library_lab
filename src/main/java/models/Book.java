@@ -18,6 +18,8 @@ public class Book {
         this.available = true;
     }
 
+    public Book(){}
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -57,7 +59,7 @@ public class Book {
     }
 
     @ManyToOne
-    @JoinColumn(name = "borrower_id", nullable = false)
+    @JoinColumn(name = "borrower_id", nullable = true)
     public Borrower getBorrower() {
         return borrower;
     }
