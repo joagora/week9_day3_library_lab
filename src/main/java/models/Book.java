@@ -38,11 +38,19 @@ public class Book {
         this.author = author;
     }
 
-    public boolean isOnLoan() {
-        return onLoan;
+    public boolean getAvailable() {
+        return available;
     }
 
-    public void setOnLoan(boolean onLoan) {
-        this.onLoan = onLoan;
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
+    public Borrower getBorrower() {
+        return borrower;
+    }
+
+    public void setBorrower(Borrower borrower) {
+        this.borrower = borrower;
     }
 }
