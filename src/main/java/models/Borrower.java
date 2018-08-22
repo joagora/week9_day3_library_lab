@@ -1,13 +1,16 @@
 package models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name="borrowers")
+
 public class Borrower {
 
     private int id;
     private String name;
+    private List<Book> books;
 
     public Borrower(){
 
@@ -15,6 +18,15 @@ public class Borrower {
 
     public Borrower(String name){
         this.name = name;
+    }
+
+    @OneToMany(mappedBy= "borrower", fetch = FetchType.LAZY)
+    public List<Book> getBooks() {
+        return books;
+    }
+
+    public void setBooks(List<Book> books) {
+        this.books = books;
     }
 
     @Id
