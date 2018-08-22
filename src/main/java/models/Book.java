@@ -5,13 +5,13 @@ public class Book {
     private int id;
     private String title;
     private String author;
-    private boolean onLoan;
+    private boolean available;
+    private Borrower borrower;
 
-    public Book(int id, String title, String author, boolean onLoan) {
-        this.id = id;
+    public Book(String title, String author) {
         this.title = title;
         this.author = author;
-        this.onLoan = onLoan;
+        this.available = true;
     }
 
     public int getId() {
